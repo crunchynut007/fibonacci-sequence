@@ -1,5 +1,5 @@
 // Simple fibonacci calculator
-const slowFib = n => {
+const fibSlow = n => {
   if (n <= 1 ) return n;
 
   let prev = 0;
@@ -10,7 +10,7 @@ const slowFib = n => {
     prev = temp;
   }
   return current;
-}
+};
 
 // recursive Fib(n);
 const fib = n => {
@@ -19,7 +19,7 @@ const fib = n => {
 };
 
 // recursive Fib(n) but very efficient. Store the previous calculated values in an object.
-fibFast = (n, mem = {}) => {
+const fibFast = (n, mem = {}) => {
   if(n in mem) return mem[n];
   if (n <=2) return 1;
   mem[n] = fibFast(n - 1, mem) + fibFast(n - 2, mem);
@@ -29,6 +29,6 @@ fibFast = (n, mem = {}) => {
 
 let n = 20;
 
-// console.log(slowFib(n));
+// console.log(fibSlow(n));
 // console.log(fib(n));
 console.log(fibFast(n));
