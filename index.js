@@ -19,11 +19,11 @@ const fib = n => {
 };
 
 // recursive Fib(n) but very efficient. Store the previous calculated values in an object.
-fibFast = (n, memo = {}) => {
-  if(n in memo) return memo[n];
+fibFast = (n, mem = {}) => {
+  if(n in mem) return mem[n];
   if (n <=2) return 1;
-  memo[n] = fibFast(n - 1, memo) + fibFast(n - 2, memo);
-  return memo[n];
+  mem[n] = fibFast(n - 1, mem) + fibFast(n - 2, mem);
+  return mem[n];
 };
 
 
